@@ -20,7 +20,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 ServletException, IOException { 
 String url="jdbc:mysql://localhost:3306/products"; 
 String uname="root"; 
-String pass="13Gow1999V!Bhav"; 
+String pass=""; 
 response.setContentType("text/html"); 
 
 String pId = request.getParameter("productid"); 
@@ -32,7 +32,7 @@ out.print("<table border='1'><tr><th>Product Id</th><th>Product Name</th><th>Pro
 
 try { 
 Class.forName("com.mysql.cj.jdbc.Driver"); 
-Connection dbCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/products","root","13Gow1999V!Bhav"); 
+Connection dbCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/products","root",""); 
 PreparedStatement st= dbCon.prepareStatement(query); 
 st.setString(1, pId); 
 ResultSet rs =st.executeQuery(); 
